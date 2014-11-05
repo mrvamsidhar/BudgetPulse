@@ -28,3 +28,10 @@ angular
   		})
   		.otherwise({ redirectTo: '/login' });
   }]);
+
+angular.module('budgetPulseApp')
+  .controller('appController', ['$scope', function ($scope) {
+    console.log('Inside App controller');
+    $scope.currentUserId = null;
+    
+  }]);

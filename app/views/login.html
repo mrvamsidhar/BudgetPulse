@@ -6,7 +6,7 @@
                         <h3 class="panel-title">Please Sign In</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" novalidate name="login_form" ng-submit="login()">
+                        <form role="form" novalidate name="login_form" ng-submit="login(credentials)">
                             <fieldset>
                                 <div class="form-group" ng-class="{ 'has-error' : (submitted && login_form.email.$invalid) ||( login_form.email.$invalid && !login_form.email.$pristine) }">
                                     <input class="form-control" placeholder="E-mail" name="email" type="email" 
