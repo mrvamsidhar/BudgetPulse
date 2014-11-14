@@ -35,7 +35,10 @@
       </div>
 
       <!--<div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>-->
-      <div data-ng-view="" id="ng-view" class="slide-animation"></div>
+      <!--<div data-ng-view="" id="ng-view" class="slide-animation"></div>-->
+      <div class="container">
+    <div ui-view></div>
+</div>
 
       <div class="footer">
         <p><span class="glyphicon glyphicon-heart"></span> Bala Chandra V Mamillapalli</p>
@@ -69,6 +72,7 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-bootstrap-grid-tree/src/tree-grid-directive.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -76,8 +80,10 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/transaction.add.js"></script>
         <script src="scripts/services/authService.js"></script>
         <script src="scripts/services/sessionService.js"></script>
+        <script src="scripts/services/transactionService.js"></script>
     <!-- endbuild -->
 </body>
 </html>

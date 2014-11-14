@@ -8,7 +8,7 @@
  * Controller of the budgetPulseApp
  */
 angular.module('budgetPulseApp')
-  .controller('loginController', ['$scope','$location','$rootScope', function ($scope,$location,$rootScope) {
+  .controller('loginController', ['$scope','$state','$rootScope', function ($scope,$state,$rootScope) {
     
     $scope.login = login;
     function login(credentials){
@@ -18,6 +18,6 @@ angular.module('budgetPulseApp')
       }
       console.log(credentials);
       $rootScope.$broadcast('LOGIN_SUCCESS');
-      $location.path('main');
+      $state.go('mainView');
     }
   }]);

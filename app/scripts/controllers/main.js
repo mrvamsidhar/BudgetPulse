@@ -18,7 +18,7 @@ angular.module('budgetPulseApp')
       'Karma'
     ];
     $scope.tree_data = [
-     {Name:"USA",Area:9826675,Population:318212000,TimeZone:"UTC -5 to -10",
+     {Name:"Income",Area:9826675,Population:318212000,TimeZone:"UTC -5 to -10",
       children:[
         {Name:"California", Area:423970,Population:38340000,TimeZone:"Pacific Time",
             children:[
@@ -33,6 +33,6 @@ angular.module('budgetPulseApp')
         }
     ]
   },    
-  {Name:"Texas",Area:268581,Population:26448193,TimeZone:"Mountain"}
+  {Name:"Expenses",Area:268581,Population:26448193,TimeZone:"Mountain"}
   ];
   });

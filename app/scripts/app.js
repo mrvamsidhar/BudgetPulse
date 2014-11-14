@@ -9,24 +9,38 @@
  * Main module of the application.
  */
 angular
-  .module('budgetPulseApp', ['ngRoute','ui.bootstrap','treeGrid'])
-  .config(['$routeProvider', function ($routeProvider){
-  	$routeProvider
-  		.when('/login',{
-  			templateUrl: '/views/login.html',
-  			controller:'loginController'
+  .module('budgetPulseApp', ['ui.router','ui.bootstrap','treeGrid'])
+  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider){
+  	$stateProvider
+  		.state('loginView',{
+        url: "/login",
+        templateUrl: '/views/login.html',
+        controller:'loginController'        
   		})
-  		.when('/main',{
-  			templateUrl: '/views/main.html',
-  			controller:'MainCtrl'
-  		})
-  		.when('/about',{
+  		.state('mainView',{
+        url:"/main",
+        views:{
+              '':{
+                  templateUrl:'/views/main.html',
+                  controller:'MainCtrl'
+              },
+              'addTransactionView@mainView':{
+                  templateUrl:'/views/transaction.add.html',
+                  controller:'transactionAdd as vm',
+              }
+        } 			
+  		});
+  		/*.state('/about',{
   			templateUrl: '/views/about.html'
   		})
-  		.when('/contact',{
+  		.state('/contact',{
   			templateUrl: '/views/contact.html'
   		})
-  		.otherwise({ redirectTo: '/login' });
+      .state('/addTransaction',{
+        templateUrl: '/views/transaction.add.html',
+        controller:'transactionAdd'
+      });*/
+  		$urlRouterProvider.otherwise('/loginView');
   }]);
 
 angular.module('budgetPulseApp')
