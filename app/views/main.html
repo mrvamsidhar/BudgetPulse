@@ -1,0 +1,22 @@
+<div >
+ 	<div class="row">
+            <div class="col-md-8">
+            <accordion>
+            	 <accordion-group heading="Transactions" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+			      This content is straight in the template.
+			    </accordion-group>
+            </accordion>
+            </div>
+            <div class="col-md-4">
+            <accordion close-others="oneAtATime" >            	
+	            <accordion-group is-open="status.open" >
+	        		<accordion-heading>
+	            		Add Transaction <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+	        		</accordion-heading>
+				          <div ui-view="addTransactionView"></div>
+	    		</accordion-group>
+	    	</accordion>
+            </div>
+     </div>
+</div>
+ 
