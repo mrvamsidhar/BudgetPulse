@@ -17,6 +17,11 @@ angular
         templateUrl: '/views/login.html',
         controller:'loginController'        
   		})
+      .state('dashboardView',{
+        url: "/dashboard",
+        templateUrl: '/views/dashboard.html',
+        controller:'dashboardController as vm'        
+      })
   		.state('mainView',{
         url:"/main",
         views:{
@@ -27,6 +32,10 @@ angular
               'addTransactionView@mainView':{
                   templateUrl:'/views/transaction.add.html',
                   controller:'transactionAdd as vm',
+              },
+              'addCategoryView@mainView':{
+                  templateUrl:'/views/category.add.html',
+                  controller:'categoryAdd as vm',
               }
         } 			
   		});
@@ -40,7 +49,7 @@ angular
         templateUrl: '/views/transaction.add.html',
         controller:'transactionAdd'
       });*/
-  		$urlRouterProvider.otherwise('/loginView');
+  		$urlRouterProvider.otherwise('/dashboardView');
   }]);
 
 angular.module('budgetPulseApp')

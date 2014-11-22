@@ -1,19 +1,38 @@
 <div >
  	<div class="row">
             <div class="col-md-8">
-            <accordion>
-            	 <accordion-group heading="Transactions" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-			      This content is straight in the template.
-			    </accordion-group>
-            </accordion>
+            <table class="table table-inbox table-hover table-striped table-bordered">
+              <thead>
+			    <tr>
+			      <th>Date</th>
+			      <th>Description</th>
+			      <th>Category</th>
+			      <th>Amount</th>
+			    </tr>
+			  </thead>
+			  <tr ng-repeat="item in transactions">			    
+			    <td>{{ item.date }}</td>
+			    <td>{{ item.description }}</td>
+			    <td>{{ item.category }}</td>
+			    <td>{{ item.amount }}</td>
+			  </tr>
+			</table>
             </div>
             <div class="col-md-4">
             <accordion close-others="oneAtATime" >            	
 	            <accordion-group is-open="status.open" >
 	        		<accordion-heading>
-	            		Add Transaction <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+	            		Add Category <i class="pull-right glyphicon" ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
 	        		</accordion-heading>
-				          <div ui-view="addTransactionView"></div>
+				        <div ui-view="addCategoryView"></div>
+	    		</accordion-group>
+	    	</accordion>
+            <accordion close-others="oneAtATime" >            	
+	            <accordion-group is-open="status.open" >
+	        		<accordion-heading>
+	            		Add Transaction <i class="pull-right glyphicon" ng-class="{'glyphicon-minus': status.open, 'glyphicon-plus': !status.open}"></i>
+	        		</accordion-heading>
+				        <div ui-view="addTransactionView"></div>
 	    		</accordion-group>
 	    	</accordion>
             </div>
